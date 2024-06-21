@@ -27,7 +27,8 @@ const cachedGetAllUsers = unstable_cache(
 
 const Home = async () => {
   const token = cookies().get("token");
-  const allUsers = getAllUsers();
+  const allUsers = await getAllUsers();
+
   const cachedAllUsers = await cachedGetAllUsers();
   return (
     <div>
